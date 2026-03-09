@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingeniero de Desarrollo de Software y DevOps | Portafolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Typed.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="bracket">&lt;</span>
+      <span class="name">Desarrollo y DevOps</span>
+      <span class="bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- CANVAS 3D BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">~/portafolio — bash</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span class="prompt">$</span> whoami</p>
+          <h1 class="hero-name" id="hero-name">Andreé Alexander Rimachi Soria</h1>
+          <p class="terminal-line"><span class="prompt">$</span> cat role.txt</p>
+          <p class="hero-role"><span id="typed-role"></span></p>
+          <p class="terminal-line mt"><span class="prompt">$</span> cat summary.txt</p>
+          <p class="hero-desc">
+            Ingeniero de Sistemas y egresado de Desarrollo de Software.<br />
+            Experiencia en desarrollo (web/multiplataforma) y DevOps/Nube (CI/CD, contenedores, Azure/GCP).<br />
+            <span class="blink-cursor">_</span>
+          </p>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary">Conocerme</a>
+        <a href="#contact" class="btn-outline">Contactar</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-label">// sobre_mi</div>
+      <h2 class="section-title">Sobre <span class="accent">Mí</span></h2>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <div class="avatar-icon">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="35" r="20" stroke="#00ff88" stroke-width="2" />
+                  <path d="M15 85 C15 65 85 65 85 85" stroke="#00ff88" stroke-width="2" />
+                  <circle cx="50" cy="35" r="8" fill="#00ff88" opacity="0.3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+        </div>
+        <div class="about-text">
+          <p>
+            Soy Ingeniero de Sistemas con enfoque en desarrollo y DevOps/Nube. Cuento con más de
+            4 años de experiencia en desarrollo de software, soporte (helpdesk) y administración de
+            bases de datos SQL (MySQL, SQL Server, PostgreSQL) y NoSQL (MongoDB).
+          </p>
+          <p>
+            He trabajado con Node.js/Express, TypeScript/JavaScript y React; además de prácticas
+            DevOps como CI/CD (Azure DevOps, GitHub Actions, Jenkins), contenedores (Docker, Kubernetes)
+            y despliegues en la nube (Azure, GCP, AWS).
+          </p>
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat-num" data-target="4">0</span>+
+              <span class="stat-label">Años de exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="5">0</span>+
+              <span class="stat-label">Clientes</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-label">Nubes (Azure/GCP)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-label">// stack_tecnologico</div>
+      <h2 class="section-title">Stack <span class="accent">Tecnológico</span></h2>
+
+      <div class="skills-categories">
+
+        <div class="skill-category" data-delay="0">
+          <div class="category-header">
+            <span class="category-icon">☁️</span>
+            <span>Nube e infraestructura</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Azure</span>
+            <span class="pill">GCP</span>
+            <span class="pill">AWS</span>
+            <span class="pill">Azure App Services</span>
+            <span class="pill">Azure Functions</span>
+            <span class="pill">Azure Networking</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-delay="100">
+          <div class="category-header">
+            <span class="category-icon">🐳</span>
+            <span>Contenedores</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Docker</span>
+            <span class="pill">Kubernetes (AKS)</span>
+            <span class="pill">Docker Swarm</span>
+            <span class="pill">CapRover</span>
+            <span class="pill">Azure Container Registry</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-delay="200">
+          <div class="category-header">
+            <span class="category-icon">⚙️</span>
+            <span>CI/CD</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Azure DevOps</span>
+            <span class="pill">GitHub Actions</span>
+            <span class="pill">Jenkins</span>
+            <span class="pill">Bitbucket</span>
+            <span class="pill">GitStream</span>
+            <span class="pill">Azure CLI</span>
+            <span class="pill">PowerShell</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-delay="300">
+          <div class="category-header">
+            <span class="category-icon">📊</span>
+            <span>Observabilidad</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Azure Monitor</span>
+            <span class="pill">Application Insights</span>
+            <span class="pill">Métricas y logs</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-delay="400">
+          <div class="category-header">
+            <span class="category-icon">🔐</span>
+            <span>Seguridad</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">GitHub Advanced Security</span>
+            <span class="pill">Azure Security Center</span>
+            <span class="pill">Azure Key Vault</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-delay="500">
+          <div class="category-header">
+            <span class="category-icon">💻</span>
+            <span>Desarrollo</span>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Node.js</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">React.js</span>
+            <span class="pill">Express</span>
+            <span class="pill">PHP</span>
+            <span class="pill">C#</span>
+            <span class="pill">Java</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">MongoDB</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-label">// proyectos_destacados</div>
+      <h2 class="section-title">Proyectos <span class="accent">Destacados</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-delay="0">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🚀</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Métricas DORA con LinearB + GitStream</h3>
+          <p class="card-desc">
+            Integración de LinearB para seguimiento de métricas (DORA) e incorporación de GitStream
+            para mejorar el flujo de CI/CD, automatizar aprobaciones de PR y optimizar el ciclo de software.
+          </p>
+          <div class="card-tags">
+            <span class="tag">LinearB</span>
+            <span class="tag">GitStream</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">DORA</span>
+          </div>
+        </div>
+
+        <div class="project-card featured" data-delay="100">
+          <div class="card-glow"></div>
+          <div class="card-badge">Destacado</div>
+          <div class="card-header">
+            <div class="card-icon">🔍</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Automatización de vulnerabilidades (GHAS)</h3>
+          <p class="card-desc">
+            Automatización de procesos con GitHub Actions y GitHub Advanced Security para identificar
+            vulnerabilidades y acelerar su remediación con soporte de agentes (Copilot).
+          </p>
+          <div class="card-tags">
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">GHAS</span>
+            <span class="tag">Seguridad</span>
+            <span class="tag">Automatización</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-delay="200">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🔐</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">CI/CD y despliegues en Azure (AKS/App Services)</h3>
+          <p class="card-desc">
+            Diseño e implementación de pipelines con Azure DevOps, GitHub Actions y Jenkins;
+            despliegue de contenedores con Docker y orquestación con Kubernetes (AKS).
+          </p>
+          <div class="card-tags">
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">Docker</span>
+            <span class="tag">AKS</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-delay="300">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">💻</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">CMS de punta a punta + OAuth/SSO</h3>
+          <p class="card-desc">
+            Desarrollo de un CMS con React.js, Node.js/Express y MySQL, con integraciones OAuth/SSO,
+            microservicios y mantenimiento de servidores Linux para asegurar estabilidad y seguridad.
+          </p>
+          <div class="card-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">OAuth</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-delay="400">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🗄️</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">APIs + caché + migración a la nube</h3>
+          <p class="card-desc">
+            Desarrollo de front-end en JavaScript y back-end en Node.js, con Redis para caché, MySQL y MongoDB.
+            Integración de almacenamiento en la nube (Google Cloud Storage) y migración de despliegues a VPS en Azure.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Redis</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Azure VPS</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-delay="500">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🧩</div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="icon-link" title="LinkedIn"
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">WordPress + seguridad + eventos</h3>
+          <p class="card-desc">
+            Mantenimiento de WordPress, ajuste de temas y nuevas páginas; soporte a eventos con Zoho Backstage;
+            y revisión de seguridad en formularios e integraciones con API REST.
+          </p>
+          <div class="card-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">PHP</span>
+            <span class="tag">API REST</span>
+            <span class="tag">Seguridad</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-label">// contacto</div>
+      <h2 class="section-title">Hablemos <span class="accent">:)</span></h2>
+      <p class="contact-sub">¿Tienes un proyecto o quieres colaborar? Escríbeme.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:arimachi069@gmail.com" class="contact-value">arimachi069@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/alexander-rimachi/" class="contact-value" target="_blank"
+                rel="noopener noreferrer">/in/alexander-rimachi</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <a href="https://github.com/Ox19" class="contact-value" target="_blank"
+                rel="noopener noreferrer">github.com/Ox19</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Certificados</span>
+              <a href="https://drive.google.com/drive/folders/1RBMkKW63V_pxPgZqcwkiRflqd6gBzGNu?usp=sharing"
+                class="contact-value" target="_blank" rel="noopener noreferrer">Google Drive</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" placeholder="Tu nombre" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="tu@email.com" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" rows="4" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <span>Enviar mensaje</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <span class="bracket">&lt;</span>
+        Construido con pasión por la infraestructura
+        <span class="bracket">/&gt;</span>
+      </p>
+      <p class="footer-copy">© 2026 · Andreé Alexander Rimachi Soria · Ingeniero de Desarrollo de Software y DevOps</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
